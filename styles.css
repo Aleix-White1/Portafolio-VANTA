@@ -63,7 +63,12 @@ body {
     height: 100vh;
     max-height: 100vh;
     margin: 0 auto;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
+    
+    background-image: url('./img/container2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
 }
 
 .icons {
