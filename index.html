@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+    <!-- model-viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- Sweet alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- vanta -->
+    <script src="./lib/vanta.waves.min.js"></script>
+    <script src="./lib/vanta.birds.min.js"></script>
+    <title>Aleix Blanco</title>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <h1 class="title">
+            < Aleix Blanco Balasch <br />
+            Full Stack Developer />
+        </h1>
+        <a href="#container2"><img class="img" src="./img/flecha.png" alt="" />
+        </a>
+    </div>
+    <!-- CONTAINER 2 -->
+    <div id="container2" class="container2">
+        <div class="flechaSubida">
+            <a href="#container"><img class="img" src="./img/flecha.subida.png" alt="" />
+        </div>
+            <div class="icons">
+                <a href="https://github.com/Aleix-White1"><i class="nes-icon github is-large"></i></a>
+                <a href="https://www.linkedin.com/in/aleix-blanco-balasch-535a30293/"><i class="nes-icon linkedin is-large"></i></a>
+                <a href="#"><i class="nes-icon whatsapp is-large"></i></a>
+                <a href="#"><i class="nes-icon gmail is-large"></i></a>
+            </div>
+            <div class="avatar">
+                <model-viewer 
+                    id="model-viewer"
+                    src="./img/avatar.glb" 
+                    alt="Descripción del modelo" 
+                    auto-rotate 
+                    background-color="#f0f0f0"
+                    shadow-intensity="1" 
+                    camera-controls 
+                    camera-orbit="-55deg 55deg 2.5em"
+                    touch-action="pan-y">
+                </model-viewer>
+                <div class="personal1">
+                    <div class="iconosMac">
+                        <a onclick="rojo()"><img src="./img/rojo.png" style="width: 2%;"></a>
+                        <a onclick="amarillo()"><img src="./img/amarillo.png" style="width: 2%;"></a>
+                        <a onclick="verde()"><img src="./img/verde.png" style="width: 2%;"></a>
+                    </div>
+                    <h1>Hola</h1>
+                    <div class="turn">
+                        <a href="#"><img src="./img/turn.png" style="width: 3%;"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        <div class="flechaBajada">
+            <a href="#container3"><img class="img" src="./img/flecha.png" alt="" /></a>
+        </div>
+    </div>
+    <div id="container3" class="container3"> 
+        <div class="flechaSubida">
+            <a href="#container2"><img class="img" src="./img/flecha.subida.png" alt="" /></a>
+        </div>
+        <div class="contact">
+            <div class="subContact">
+                <h1 class="titleNes">Contact me</h1>
+                <div class="nes-container is-rounded is-dark">
+                    <label for="mail_field">E-mail:</label>
+                    <input type="text" id="mail_field" class="nes-input">
+                    <label for="name_field">Your name</label>
+                    <input type="text" id="name_field" class="nes-input">
+                    <label for="textarea_field">Content</label>
+                    <textarea id="textarea_field" class="nes-textarea"></textarea>
+                    <a class="nes-btn" href="#">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+    <script type="text/javascript">
+        VANTA.WAVES({
+            el: ".container",
+            color: 0x70,
+            waveHeight: 20,
+            shininess: 50,
+            waveSpeed: 1.5,
+            zoom: 1,
+        });
+        VANTA.BIRDS({
+            el: ".container3",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            scale: 1.0,
+            scaleMobile: 1.0,
+        });
+    </script>
+</body>
+
+</html>
