@@ -1,46 +1,71 @@
-// const frases = ["Hello ;)", "Select lenguage"];
+const frases = ["Hello ;)", "Select lenguage",];
 
-// let index = 0;
-// let intervalID;
-// function changeText(){
-//     document.getElementById('titlePrincipal').textContent = frases[index];
-//     index = (index + 1) % frases.length;
+const frasesES = ["Bienvenido", "Este es mi portafolio"];
+const frasesEN = ["Welcome", "This is my briefcase"];
 
-//     if(index === 0){
-//         clearInterval(intervalID);
-//     }
-// }
+const title = document.getElementById("titlePrincipal");
+const container = document.querySelector(".idiomas");
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     changeText();
-//     intervalID = setInterval(changeText, 2000); 
-// });
+async function changeText() {
+    
+    for (let i = 0; i < frases.length; i++) {
+        title.textContent = frases[i];
 
+        if (frases[i] === "Select lenguage") {
+            // Create div elements and set their classes
+            const divES = document.createElement("div");
+            divES.setAttribute("class", "divES");
 
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
-canvas.width = 1000;
-canvas.height = 1000;
+            const divEN = document.createElement("div");
+            divEN.setAttribute("class", "divEN");
 
-var party = SmokeMachine(ctx, [54, 16.8, 18.2]);
+            // Create and set attributes for the first image
+            const img1 = document.createElement("img");
+            img1.style.width = "50%"; // Set the width of the image
+            img1.setAttribute("src", "./img/ES.png"); // Set the source attribute to your image file path
+            divES.appendChild(img1);
 
-party.start();
-party.addSmoke(10000,10000,10000);
+            // Create and set attributes for the second image
+            const img2 = document.createElement("img");
+            img2.style.width = "50%"; // Set the width of the image
+            img2.setAttribute("src", "./img/EN.png"); // Set the source attribute to your image file path
+            divEN.appendChild(img2);
 
-setTimeout(function(){
+            // Append the div elements to the container
+            container.appendChild(divES);
+            container.appendChild(divEN);
 
-    party.stop() // stop animating
-
-    party.addSmoke(600,500,100)
-    party.addSmoke(500,600,20)
-
-    for(var i=0;i<10;i++){
-        party.step(10) // pretend 10 ms pass and rerender
+            img1.addEventListener("click", function(){
+                webEspañol();
+            });
+            img2.addEventListener("click", function(){
+                webEnglish();
+            });
+    
+        }
+        
+        // Wait for 2 seconds before moving to the next phrase
+        await new Promise(resolve => setTimeout(resolve, 2000));
     }
+}
 
-    setTimeout(function(){
-        party.start()
-    },1000)
+document.addEventListener("DOMContentLoaded", function() {
+    changeText(); // Initialize with the first phrase
+});
 
-},1000)
+
+function webEspañol(){
+    title.innerHTML = "";
+    idiomas.style.display = "none";
+    for (let i = 0; i < frasesES.length; i++) {
+        title.textContent = frasesES[i];
+    }
+}
+function webEnglish(){
+    title.innerHTML = "";
+    idiomas.style.display = "none";
+    for (let i = 0; i < frasesEN.length; i++) {
+        title.textContent = frasesEN[i];
+    }
+}
     
