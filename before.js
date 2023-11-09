@@ -1,7 +1,7 @@
 const frases = ["Hello ;)", "Select lenguage",];
 
-const frasesES = ["Bienvenido", "Este es mi portafolio"];
-const frasesEN = ["Welcome", "This is my briefcase"];
+const frasesES = ["Bienvenido", "Este es mi portafolio", "Espero que te guste"];
+const frasesEN = ["Welcome", "This is my briefcase", "I hope you enjoy"];
 
 const title = document.getElementById("titlePrincipal");
 const container = document.querySelector(".idiomas");
@@ -10,7 +10,6 @@ async function changeText() {
     
     for (let i = 0; i < frases.length; i++) {
         title.textContent = frases[i];
-
         if (frases[i] === "Select lenguage") {
             // Create div elements and set their classes
             const divES = document.createElement("div");
@@ -52,20 +51,3 @@ async function changeText() {
 document.addEventListener("DOMContentLoaded", function() {
     changeText(); // Initialize with the first phrase
 });
-
-
-function webEspañol(){
-    title.innerHTML = "";
-    idiomas.style.display = "none";
-    for (let i = 0; i < frasesES.length; i++) {
-        title.textContent = frasesES[i];
-    }
-}
-function webEnglish(){
-    title.innerHTML = "";
-    idiomas.style.display = "none";
-    for (let i = 0; i < frasesEN.length; i++) {
-        title.textContent = frasesEN[i];
-    }
-}
-    
