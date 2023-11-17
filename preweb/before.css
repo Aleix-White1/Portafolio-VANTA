@@ -204,3 +204,10 @@ body {
     opacity: 1;
   }
 }
+
+@media (width < 1080px) {
+  #titlePrincipal{
+    font-size: 70%;
+  }
+
+}
