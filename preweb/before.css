@@ -17,10 +17,17 @@
   font-family: Press;
   src: url("../Fonts/Press_Start_2P/PressStart2P-Regular.ttf");
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: 60px;
   font-family: Source-Italic;
-  background-image: url("../img/container2.jpg");
+  color: white;
+  margin: 0%;
+  padding: 0%;
+  margin-right: 0;
 }
 .container_principal {
   display: flex;
@@ -30,8 +37,6 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 5%;
-  border: 0.5px solid black;
-  border-radius: 25px 25px 25px 25px;
 }
 .divES,
 .divEN {
